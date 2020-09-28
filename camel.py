@@ -106,7 +106,7 @@ def main():
 if __name__ == '__main__':
     print("Welcome to my Camel Game!")
     print("You have stolen a camel to make your way across the great Mobi desert.")
-    print("The natives want their came back and are chasing you down!")
+    print("The natives want their camel back and are chasing you down!")
     print("Surive your desert trek and outrun the natives.")
     thirst = 0
     tiredness = 0
