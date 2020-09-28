@@ -21,8 +21,8 @@ def choice(moveChoice):
         gameState = True
     
     # Drink from canteen
-    elif moveChoice.lower()=='a':
-        if canteenDrinks>0:
+    elif moveChoice.lower() =='a':
+        if canteenDrinks >0:
             canteenDrinks -=1
             thirst = 0
             print("Uhhh... refreshing!")
@@ -57,8 +57,10 @@ def choice(moveChoice):
         print("Miles traveled:",milesTraveled)
         print("Drinks in canteen:", canteenDrinks)
         print("The natives are",(milesTraveled - nativesMiles),"miles behind you") 
+    else:
+        print ("Please enter a a valid option. Choose one below:")
     oasis = randint(1,21)
-    if oasis == 7 and moveChoice!='e':
+    if oasis == 7 and moveChoice.lower() !='e' and moveChoice.lower() != 'q':
         canteenDrinks = 3
         print("Lucky you! You found an oasis and refilled your canteen!")
     return gameState
@@ -84,24 +86,25 @@ def main():
         gameState = choice(moveChoice)
         if gameState == True:
             break
-        if thirst > 4:
+        if thirst > 4 and thirst <= 6:
             print("You are thirsty.")
         if thirst > 6:
             print("You died of thirst!")
             break
-        if tiredness > 5:
+        if tiredness > 5 and tiredness <=8:
             print("Your camel is getting tired.")
         if tiredness>8:
             print("Your camel is dead")
             break
-        if nativesMiles>=milesTraveled:
+        if nativesMiles >= milesTraveled:
             print("They caught up to you... Game over!")
             break
         if milesTraveled - nativesMiles < 15:
             print("The natives are getting close!")
-        if milesTraveled >=200:
+        if milesTraveled >= 200:
             print("You made it across the desert! You won!")
             break
+    input()
 
 if __name__ == '__main__':
     print("Welcome to my Camel Game!")
